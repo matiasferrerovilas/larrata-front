@@ -1,0 +1,46 @@
+<ngx-spinner type="line-scale"><p style="color: white" > Loading... </p></ngx-spinner>
+<h5 class="card-title">Datos Personales</h5>
+<div class="card" style="border-radius: 1.3rem">
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="submitDatosPersonales()">
+      <div class="row">
+        <div class="col-lg">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" formControlName="nombre" maxlength="25">
+            <label for="floatingInput">Nombre</label>
+          </div>
+          <div *ngIf="form.controls.nombre.touched &&
+          errorHandling('nombre', 'required')" class="alert alert-danger">
+            Nombre requerido.
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput2" placeholder="Apellido" formControlName="apellido" maxlength="25">
+            <label for="floatingInput2">Apellido</label>
+          </div>
+          <div *ngIf="form.controls.apellido.touched &&
+          errorHandling('apellido', 'required')" class="alert alert-danger">
+            Apellido requerido.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="telefono" formControlName="telefono" maxlength="10">
+            <label for="floatingInput">Telefono</label>
+            <p><small>Telefono sin - o espacios</small></p>
+          </div>
+          <div *ngIf="form.controls.telefono.touched &&
+          errorHandling('telefono', 'pattern')" class="alert alert-danger">
+            El telefono solo debe contener números.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button [disabled]="!form.valid" type="submit" class="btn mt-3 btn-block">Subir Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>

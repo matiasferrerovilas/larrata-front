@@ -1,0 +1,48 @@
+<h5 class="card-title">Datos Cuenta</h5>
+<div class="card" style="border-radius: 1.3rem">
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="submitDatosPersonales()" class="row g-3 needs-validation">
+      <div class="col-lg">
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingInput3" placeholder="New Password" formControlName="password">
+          <label for="floatingInput3">New Password</label>
+          <ng9-password-strength-bar
+            [passwordToCheck]="this.form.controls.password.value"
+            (onStrengthChanged)="strengthChanged($event)">
+          </ng9-password-strength-bar>
+          <div *ngIf="form.controls.password.touched &&
+          strengthNewPassword <1" class="alert alert-danger">
+            Password debil.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg">
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingInput4" placeholder="ConfirmPassword" formControlName="confirm_password">
+          <label for="floatingInput4">Confirmar Password</label>
+        </div>
+        <div *ngIf="form.controls.confirm_password.touched &&
+          form.controls.password.value != form.controls.confirm_password.value" class="alert alert-danger">
+          Password distintas.
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Email" formControlName="email" maxlength="50">
+          <label for="floatingInput">Email</label>
+          <div *ngIf="form.controls.email.touched &&
+          errorHandling('email', 'required')" class="alert alert-danger">
+            Email requerido.
+          </div>
+          <div *ngIf="form.controls.email.touched &&
+            errorHandling('email', 'pattern')" class="alert alert-danger">
+            Ingrese un email valido.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button [disabled]="!form.valid || !passIguales() || strengthNewPassword < 1" type="submit" class="btn mt-3 btn-block">Subir Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>

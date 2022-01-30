@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{miembro.apellido}}, {{miembro.nombre}}</h5>
+  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" (click)="action()"></button>
+</div>
+<div class="row modal-body">
+  <div class="row">
+    <div class="col-1 profile-pic">
+      <img src="{{miembro.src? miembro.src : defaultPicture}}"  class=" card-img-top img-circle" alt="...">
+    </div>
+    <div class="col-1">
+      <div class="textoMiembro">{{miembro.rol}}</div>
+      <div class="textoMiembro">{{miembro.email}}</div>
+    </div>
+  </div>
+
+  <table class="table table-responsive table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Banco</th>
+      <th scope="col">Alias</th>
+      <th scope="col">CBU</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dato of miembro.datosBancario">
+      <td>{{dato.banco.descripcion}}</td>
+      <td>{{dato.alias}}</td>
+      <td>{{dato.cbu}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success btn-closed mt-3" (click)="action()">Cerrar</button>
+</div>

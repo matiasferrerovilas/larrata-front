@@ -1,0 +1,36 @@
+<div class="row mobile">
+  <ul class="navbar-nav hidden-md">
+    <li class="nav-item dropdown" style="align-content: flex-end;">
+      <div class="image-cropper nav-link"  href="#" id="navbarDropdown"  data-bs-toggle="dropdown">
+        <img src="{{perfil? (perfil.imagen?  perfil.imagen : defaultProfile) : defaultProfile}}"  class="card-img-top profile-pic" alt="...">
+      </div>
+      <ul id="dropDownHeader" class="dropdown-menu dropdown-menu-md dropdown-menu-left-settings" aria-labelledby="navbarSettingsDesktop" style="margin-right:260px;min-width: 10px!important;">
+        <a class="dropdown-item dropdown-item-settings" (click)="goTo('perfil')">
+          <i class="bi bi-gear"></i>
+          <span style="margin-left:9px">Configuracion</span>
+        </a>
+        <a class="dropdown-item dropdown-item-settings" (click)="goTo('admin')" *ngIf="puedeVer()">
+          <i class="bi bi-key"></i>
+          <span style="margin-left:9px">Administrador</span>
+        </a>
+        <a class="dropdown-item dropdown-item-settings" (click)="logOut()">
+          <i class="bi bi-box-arrow-in-left"></i>
+          <span style="margin-left:9px">Cerrar Sesion</span></a>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="botonMobile">
+  <a class="btn btn-sm btn-rnd btn-primary btnHeader"  (click)="goTo('perfil')">
+    <i class="fas fa-sign-in-alt"></i>
+    Perfil
+  </a>
+  <a class="btn btn-sm btn-rnd btn-primary btnHeader"  (click)="goTo('miembros')">
+    <i class="fas fa-sign-in-alt"></i>
+    Miembros
+  </a>
+  <a class="btn btn-sm btn-rnd btn-primary btnHeader"  (click)="logOut()">
+    <i class="fas fa-sign-in-alt"></i>
+    Salir
+  </a>
+</div>

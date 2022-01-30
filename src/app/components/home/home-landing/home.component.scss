@@ -1,0 +1,42 @@
+@import 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+
+header {
+  padding: 0px 0 85px;
+  margin-bottom: -80px;
+}
+section {
+  padding: 60px 0;
+  height: 100% !important;
+}
+.bkg-transparent{
+  background-color: transparent !important;
+}
+.bg-light-grupo{
+  border-radius: 0% 25px 25px 0%;
+}
+.bg-light{
+  width:70%;
+  background-color: rgba(57, 96, 148, 0.8) !important;
+}
+.bg-light-contacto{
+  margin-right: 0;
+  margin-left: auto;
+  border-radius: 25px 0% 0% 25px;
+}
+@media(max-width: 880px) {
+  .bg-light{
+    width:100% !important;
+  }
+  .bg-light-grupo{
+    border-radius: 0% !important;
+  }
+  .bg-light-contacto{
+    border-radius: 0% !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+
+
+

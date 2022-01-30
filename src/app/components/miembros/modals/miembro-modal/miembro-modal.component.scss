@@ -1,0 +1,23 @@
+.profile-pic {
+   display: inline;
+   margin-left: 0;
+   margin-right: 5px;
+   height: 100%;
+   width: auto;
+ }
+.img-circle {
+  height: 150px;
+  width: 150px;
+  border:10px solid #1b5e30;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+@media (max-width: 478px) {
+  .textoMiembro{
+    font-size: 20px !important;
+  }
+  td{
+    font-size: 10px !important;
+  }
+}

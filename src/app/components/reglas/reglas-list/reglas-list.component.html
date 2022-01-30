@@ -1,0 +1,56 @@
+<section>
+  <ng-container *ngIf="reglas.length > 0; else noHayReglas">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Artículos</h5>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+          <div class="col" *ngFor="let regla of reglasArticulo">
+            <app-regla-individual [regla]="regla"></app-regla-individual>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="acordionExceptions">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Excepciones
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+              <div class="col" *ngFor="let regla of reglasExcepciones">
+                <app-regla-individual [regla]="regla"></app-regla-individual>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="acordionExceptions">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnexo" aria-expanded="true" aria-controls="collapseOne">
+            Anexo
+          </button>
+        </h2>
+        <div id="collapseAnexo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div *ngIf="reglasAnexo.length > 0; else noHayAnexo" class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+              <div class="col" *ngFor="let regla of reglasAnexo">
+                <app-regla-individual [regla]="regla"></app-regla-individual>
+              </div>
+            </div>
+            <ng-template #noHayAnexo class="input-group rounded p-5" style="justify-content: center">
+              <h2 class="text-muted" style="font-style: italic;">No hay Anexos Actualmente</h2>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noHayReglas class="input-group rounded p-5" style="justify-content: center">
+    <h2 class="text-muted" style="font-style: italic;">No hay reglas Actualmente</h2>
+  </ng-template>
+</section>

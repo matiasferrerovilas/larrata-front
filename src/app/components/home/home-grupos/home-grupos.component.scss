@@ -1,0 +1,82 @@
+h1{
+  font-size: 90px;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  color: #00bb2d !important;
+}
+.row{
+  justify-content: center;;
+}
+.image-cropper {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  align-self: center;
+  border:10px solid #1b5e30;
+  margin: 2%;
+}.profile-pic {
+   display: inline;
+   margin: 0 auto;
+   height: 100%;
+   width: auto;
+ }
+
+
+.view {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.view .mask,
+.view .content {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0
+}
+
+
+.view h2 {
+  color: #ffffff !important;
+  position: relative;
+  font-size: 14px;
+  font-family: Raleway, serif;
+
+}
+
+
+.view-first img {
+  transition: all 0.2s linear;
+}
+
+.view-first .mask {
+  opacity: 0;
+  background-color: rgba(36, 1, 80, 0.59);
+  transition: all 0.4s ease-in-out;
+}
+
+.view-first h2 {
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-first:hover img {
+  transform: scale(1.1);
+}
+
+.view-first:hover .mask {
+  opacity: 1;
+}
+
+.view-first:hover h2,{
+  opacity: 1;
+  transform: translateX(-10px) translateY(50px);
+}

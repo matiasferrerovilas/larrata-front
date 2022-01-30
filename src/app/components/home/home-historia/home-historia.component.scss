@@ -1,0 +1,41 @@
+.bg-light{
+  --bs-bg-opacity: 0.7 !important;
+  border-radius: 2.35rem !important;
+}
+.card-body>p{
+  color:black !important;
+  font-weight: bold;
+}
+h1{
+  font-size: 90px;
+  color: rgb(11, 9, 63) !important;
+}
+.textoHistoriaMobile {
+  font-weight: bold !important;
+}
+.texto-card-historia {
+  text-align: justify;
+}
+@media(max-width: 992px) {
+  .textoHistoriaMobile {
+    font-size: 18px !important;
+  }
+  h1 {
+    font-size: 70px;
+  }
+  .textoHistoriaMobileContenido{
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 597px) {
+  mzd-timeline-content {
+    padding-left: 70px !important;
+    padding-bottom: 20px !important;
+    width: 90% !important;
+  }
+}
+@media(max-width: 361px) {
+  h1 {
+    font-size: 30px !important;
+  }
+}

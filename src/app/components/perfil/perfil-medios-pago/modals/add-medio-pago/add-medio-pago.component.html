@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" (click)="action()"></button>
+</div>
+<div class="modal-body">
+  <div class="text-center">
+    <form [formGroup]="form" (ngSubmit)="addDatoBancario()" class="needs-validation" novalidate>
+      <div class="row">
+        <div class="col form-floating">
+          <select class="form-select" formControlName="banco">
+            <option [value]="null" selected disabled>Medios de pago</option>
+            <option *ngFor="let banco of bancos"
+                    [value]="banco.id"
+            >{{banco.descripcion}}</option>
+          </select>
+          <div *ngIf="form.controls.banco.touched &&
+            errorHandling('banco', 'required')" class="alert alert-danger">
+            Banco requerido.
+          </div>
+        </div>
+        <div class="col form-floating">
+          <input formControlName="alias" class="form-control" id="aliasInput" placeholder="Alias">
+          <label for="aliasInput">Alias</label>
+          <div *ngIf="form.controls.alias.touched &&
+            errorHandling('alias', 'required')" class="alert alert-danger">
+            Alias requerido.
+          </div>
+        </div>
+        <div class="col-lg-5 form-floating">
+          <input formControlName="cbu" class="form-control" id="cbuInput" placeholder="Cbu">
+          <label for="cbuInput">Cbu</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button *ngIf="!datoBancario" type="button" class="btn btn-success btn-closed mt-3" (click)="addDatoBancario()">Agregar</button>
+  <button *ngIf="datoBancario" type="button" class="btn btn-success btn-closed mt-3" (click)="editarDatoBancario()">Editar</button>
+</div>

@@ -1,0 +1,21 @@
+<ngx-spinner type="line-scale"><p style="color: white" > Loading... </p></ngx-spinner>
+<section>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+    <div class="col" data-aos="fade-right" data-aos-delay="100" data-aos-duration="2300" *ngFor="let miembro of miembros">
+      <div class="profile-card card rounded-lg shadow p-4 p-xl-5 mb-4 text-center position-relative overflow-hidden">
+        <div class="banner"></div>
+        <img src="{{miembro.src? miembro.src : defaultPicture}}" alt="" class="img-circle mx-auto mb-3">
+        <h3 class="mb-4">{{miembro.apellido}}, {{miembro.nombre}}</h3>
+        <div class="text-left mb-4">
+          <p class="mb-2"><i class="fa fa-map-marker-alt mr-2"></i>{{miembro.rol}}</p>
+          <p class="mb-2"><i class="fa fa-envelope mr-2"></i>{{miembro.email}}</p>
+          <p class="mb-2"><i class="fa fa-phone mr-2"></i> {{miembro.telefono? '+011 '+miembro.telefono.numero:'No hay telefono cargado'}}</p>
+          <p class="mb-2"><i class="fa fa-globe mr-2"></i> {{miembro.fechaNacimiento | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <div class="social-links d-flex justify-content-center">
+          <button style="border-radius:25px;" type="submit" class="btn  btn-closed mt-3 btn-block btn-login" (click)="openVerMas(miembro)">Ver Mas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

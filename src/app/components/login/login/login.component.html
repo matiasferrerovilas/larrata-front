@@ -1,0 +1,37 @@
+<ngx-spinner type="line-scale"><p style="color: white" > Loading... </p></ngx-spinner>
+<section class="section-border border-primary">
+  <div class="container d-flex flex-column">
+    <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+      <div class="col-12 col-md-5 col-lg-4 py-8 py-md-11 text-center">
+
+        <h1 class="font-weight-lighter mb-0"><span class="font-weight-light text-blue">Log In</span></h1>
+        <p class="mb-6 text-muted font-size-sm">Logueate con tu email y password.</p>
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="m-1">
+            <input formControlName="email" type="email" class="form-control" placeholder="correo@mail.com" aria-label="Username" aria-describedby="basic-addon1">
+            <div *ngIf="form.controls.email.touched &&
+          errorHandling('email', 'required')" class="alert alert-danger">
+              Email requerido.
+            </div>
+            <div *ngIf="form.controls.email.touched &&
+            errorHandling('email', 'pattern')" class="alert alert-danger">
+              Ingrese un email valido.
+            </div>
+          </div>
+          <div class="m-1">
+            <div class="input-group input-group-merge">
+              <input formControlName="password" [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="Password">
+            </div>
+            <div *ngIf="form.controls.password.touched && errorHandling('password', 'required')" class="alert alert-danger">
+              Password requerida.
+            </div>
+          </div>
+          <div class="modal-footer m-1">
+            <button style="border-radius:25px;" type="submit" class="btn  btn-closed mt-3 btn-block btn-login" [disabled]="!form.valid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

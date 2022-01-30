@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <ng-container  *ngIf="grupos.length > 0; else noHayGrupos">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide  *ngFor="let grupo of grupos">
+        <div class="slide">
+          <div class="image-cropper view view-first" style="align-self: center !important;" >
+            <img src="{{grupo.ubicacion}}"  class="card-img-top profile-pic" alt="...">
+            <div class="mask">
+              <h2>{{grupo.cantidad}} miembros</h2>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </ng-container>
+  <ng-template #noHayGrupos>
+    <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+      <h1 class="text-secondary mt-0" style="text-align: center">Actualmente no hay Grupos</h1>
+    </div>
+  </ng-template>
+</div>

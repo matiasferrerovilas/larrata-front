@@ -1,0 +1,15 @@
+<ngx-spinner type="line-scale"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="row">
+  <div class="banner"></div>
+  <input
+    style="display: none;visibility: none;"
+    accept=".jpg,.jpeg,.png, .svg"
+    type="file" (change)="upload($event)"
+    #fileInput>
+  <div class="profile-card card rounded-lg p-xl-5 position-relative overflow-hidden" style="border: none;background-color:transparent !important;">
+    <img title="Subir Foto" src="{{perfil? (perfil.imagen?  perfil.imagen : defaultProfile) : defaultProfile}}"  class="img-circle mx-auto mb-3" alt="..."  (click)="fileInput.click()" style="cursor:pointer">
+    <div class="row" style="text-align: center">
+      <h2>{{perfil.apellido}}, {{perfil.nombre}}</h2>
+    </div>
+  </div>
+</div>

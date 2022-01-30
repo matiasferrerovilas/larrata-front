@@ -1,0 +1,46 @@
+<ngx-spinner type="line-scale"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="container-fluid" >
+  <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+    <h1 class="text-secondary mt-0">Contacto</h1>
+  </div>
+  <div class="container p-0">
+    <form [formGroup]="form" (ngSubmit)="sendEmail()">
+      <div class="m-1">
+        <div class="row">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+              <label for="floatingInput">Email address</label>
+              <div *ngIf="form.controls.email.touched &&
+            errorHandling('email', 'required')" class="alert alert-danger">
+                Email requerido.
+              </div>
+              <div *ngIf="form.controls.email.touched &&
+              errorHandling('email', 'pattern')" class="alert alert-danger">
+                Ingrese un email valido.
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <select class="form-select" aria-label="Default select example" formControlName="asunto">
+                <option [value]="null" selected disabled>ASUNTO</option>
+                <option *ngFor="let asunto of asuntos" [value]="asunto.id">{{asunto.descripcion}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-1">
+        <div class="marginMobile">
+          <textarea placeholder="Dejenos su comentario" formControlName="contenido" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <div *ngIf="form.controls.contenido.touched &&
+            errorHandling('contenido', 'required')" class="alert alert-danger">
+            Contenido requerido.
+          </div>
+        </div>
+      </div>
+      <button [disabled]="!form.valid"  type="submit" class="btn btn-primary marginMobile mt-2"><span>Enviar</span></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+h1{
+  font-size: 90px;
+  text-align: center;
+}
+.container-fluid{
+  padding-left: 100px
+}
+@media(max-width: 992px) {
+  .marginMobile {
+    margin-top: 30px;
+    border-radius: 5% !important;
+  }
+  h1 {
+    font-size: 70px;
+  }
+  .container-fluid{
+    padding-left: 15px !important;
+  }
+}
+.btn{
+  border-radius: 25px 0% 0% 25px;
+  width:100%;
+  background-color: #0f043f;
+  border-color: #0f043f;
+}
+.btn:hover{
+  background-color: #1d0c6e;
+  border-color: #1d0c6e;
+}
+span{
+  color: #ffffff;
+  font-weight: bold;
+}
+.form-floating > .form-select{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
