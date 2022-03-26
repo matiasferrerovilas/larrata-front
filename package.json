@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "buildProd": "ng build --configuration production",
+    "build": "ng build --output-hashing=all",
+    "buildProd": "ng build --configuration production --output-hashing=all",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "preinstall": "npx npm-force-resolutions",
