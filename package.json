@@ -11,7 +11,7 @@
     "preinstall": "npx npm-force-resolutions",
     "post-build": "node ./src/post-build.js",
     "start:heroku": "node server.js",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --configuration production --output-hashing=all"
   },
   "private": true,
   "dependencies": {
