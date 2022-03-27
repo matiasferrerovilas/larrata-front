@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { EnvService } from '../enviromentService/env.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {Filter} from '../../models/filter';
 import { from } from 'rxjs';
-import {ResponseType} from '../../constantes/responseType';
 @Injectable({
   providedIn: 'root'
 })
