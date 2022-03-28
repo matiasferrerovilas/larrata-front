@@ -22,14 +22,18 @@ export class EditarReglaModalComponent implements OnInit {
     this.form = this.formBuilder.group({
       contenido: ['']
     });
-
-
+    this.form.patchValue({
+      contenido: this.regla.contenido
+    });
+  }
+  close(){
+    this.activeModal.close();
   }
   action() {
     var reglaNueva = Object.assign(new Regla(), this.form.value);
     this.regla.contenido = reglaNueva.contenido;
     this.reglasService.updateRegla(this.regla)
-      .then(() => this.activeModal.close())
+      .then(() => this.close())
       .catch(e => {
         console.log(e.message);
       })
