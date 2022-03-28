@@ -4,6 +4,7 @@ import {ReglasLayoutComponent} from "./reglas-layout/reglas-layout.component";
 import { ReglasListComponent } from './reglas-list/reglas-list.component';
 import { ReglaIndividualComponent } from './regla-individual/regla-individual.component';
 import {ReglasService} from "./services/reglas.service";
+import {EditarReglaModalComponent} from "./modals/editar-regla-modal/editar-regla-modal.component";
 
 
 
@@ -11,7 +12,8 @@ import {ReglasService} from "./services/reglas.service";
   declarations: [
     ReglasLayoutComponent,
     ReglasListComponent,
-    ReglaIndividualComponent
+    ReglaIndividualComponent,
+    EditarReglaModalComponent
   ],
   imports: [
     CommonModule

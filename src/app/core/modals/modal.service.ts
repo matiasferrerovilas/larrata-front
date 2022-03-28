@@ -8,6 +8,10 @@ import {PerfilCambioPassModalComponent} from "../../components/perfil/modals/per
 import {AddMedioPagoComponent} from "../../components/perfil/perfil-medios-pago/modals/add-medio-pago/add-medio-pago.component";
 import {Banco} from "../../components/perfil/models/banco";
 import {DatoBancario} from "../../components/miembros/models/datoBancatio";
+import {
+  EditarReglaModalComponent
+} from "../../components/reglas/modals/editar-regla-modal/editar-regla-modal.component";
+import {Regla} from "../../components/reglas/models/regla";
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +45,11 @@ export class ModalService {
   openEditMedioPagoModal(datoBancario : DatoBancario) {
     const modalRef = this.ngbModalService.open(AddMedioPagoComponent, {  backdrop: 'static', centered: true, size: 'xl' });
     modalRef.componentInstance.datoBancario = datoBancario;
+    return modalRef;
+  }
+  openEditReglaModal(regla : Regla) {
+    const modalRef = this.ngbModalService.open(EditarReglaModalComponent, {  backdrop: 'static', centered: true, size: 'xl' });
+    modalRef.componentInstance.datoBancario = regla;
     return modalRef;
   }
 }
