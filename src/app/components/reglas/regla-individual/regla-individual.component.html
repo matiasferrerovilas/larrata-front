@@ -3,7 +3,7 @@
     <div class="banner"></div>
     <span class="img-circle mx-auto mb-3">{{regla.numero}}</span>
     <div class="text-left mb-4">
-      <p class="mb-2" style="text-justify: inter-word; text-align: justify">{{regla.contenido}}</p>
+      <p class="mb-2" style="text-justify: inter-word; text-align: justify" [innerHTML]="regla.contenido"></p>
     </div>
     <div class="social-links d-flex justify-content-center" *ngIf="puedeVer">
       <button type="submit" class="btn  btn-closed mt-3 btn-block btn-login" (click)="openEditarReglaModal()">Ver Mas</button>

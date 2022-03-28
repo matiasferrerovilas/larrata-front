@@ -39,6 +39,7 @@
     "ng9-password-strength-bar": "^1.1.0",
     "ngx-mzd-timeline": "^1.0.3",
     "ngx-owl-carousel-o": "^6.0.0",
+    "ngx-quill": "^15.0.0",
     "ngx-spinner": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

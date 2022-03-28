@@ -6,6 +6,7 @@ import { ReglaIndividualComponent } from './regla-individual/regla-individual.co
 import {ReglasService} from "./services/reglas.service";
 import {EditarReglaModalComponent} from "./modals/editar-regla-modal/editar-regla-modal.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {QuillModule} from "ngx-quill";
 
 
 
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
   providers:[ReglasService]
 })

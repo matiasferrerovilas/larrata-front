@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {Regla} from "../../models/regla";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-editar-regla-modal',
@@ -11,11 +11,6 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class EditarReglaModalComponent implements OnInit {
 
   regla: Regla;
-  /*options: Object = {
-    placeholderText: 'Edit Your Content Here!',
-    charCounterCount: false,
-    fontSize: true
-  }*/
   form: FormGroup;
 
 
