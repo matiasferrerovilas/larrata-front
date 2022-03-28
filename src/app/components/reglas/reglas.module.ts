@@ -5,6 +5,7 @@ import { ReglasListComponent } from './reglas-list/reglas-list.component';
 import { ReglaIndividualComponent } from './regla-individual/regla-individual.component';
 import {ReglasService} from "./services/reglas.service";
 import {EditarReglaModalComponent} from "./modals/editar-regla-modal/editar-regla-modal.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -16,7 +17,8 @@ import {EditarReglaModalComponent} from "./modals/editar-regla-modal/editar-regl
     EditarReglaModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers:[ReglasService]
 })
