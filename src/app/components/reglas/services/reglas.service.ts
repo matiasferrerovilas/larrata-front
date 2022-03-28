@@ -12,4 +12,7 @@ export class ReglasService {
   getAllReglas():Promise<Regla[]>{
     return this.httpService.getPromise<Regla[]>('reglas');
   }
+  updateRegla(regla: Regla):Promise<boolean>{
+    return this.httpService.postPromise<boolean>('reglas/update',regla);
+  }
 }

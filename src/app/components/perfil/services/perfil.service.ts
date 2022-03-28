@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpService} from "../../../core/services/http/http.service";
 import {DatoBancarioNuevo} from "../models/dato-bancario-nuevo";
 import {Observable} from "rxjs";
-import {Miembro} from "../../miembros/models/miembro";
 import {PerfilDatosCuenta} from "../models/perfil-datos-cuenta";
 import {DatoBancario} from "../../miembros/models/datoBancatio";
 import {PerfilDatosPersonales} from "../models/perfil-datos-personales";

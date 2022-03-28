@@ -1,20 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ClienteLogeado} from "../../login/models/cliente-logeado";
+import {Component,  OnInit} from '@angular/core';
 import {PerfilService} from "../services/perfil.service";
 import {MiembrosService} from "../../miembros/services/miembros.service";
 import {Miembro} from "../../miembros/models/miembro";
 import {LoginService} from "../../../core/services/session/login.service";
-import { faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import {DatoBancario} from "../../miembros/models/datoBancatio";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Banco} from "../models/banco";
-import {LoginUsuario} from "../../login/models/LoginUsuario";
 import {Router} from "@angular/router";
 import {ModalService} from "../../../core/modals/modal.service";
-import {DatoBancarioNuevo} from "../models/dato-bancario-nuevo";
 import {Filter} from "../../../core/constantes/models/filter";
-import {Observable, Subject} from "rxjs";
 import {debounceTime, switchMap, share} from "rxjs/operators";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-perfil-medios-pago',
@@ -35,8 +29,7 @@ export class PerfilMediosPagoComponent implements OnInit {
   constructor(private perfilService: PerfilService,
               private generadorModales: ModalService,
               private loginService:LoginService,
-              private router: Router,
-              private miembrosService: MiembrosService) { }
+              private router: Router,) { }
 
   async ngOnInit() {
 

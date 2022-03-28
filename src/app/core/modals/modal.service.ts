@@ -49,7 +49,7 @@ export class ModalService {
   }
   openEditReglaModal(regla : Regla) {
     const modalRef = this.ngbModalService.open(EditarReglaModalComponent, {  backdrop: 'static', centered: true, size: 'xl' });
-    modalRef.componentInstance.datoBancario = regla;
+    modalRef.componentInstance.regla = regla;
     return modalRef;
   }
 }
